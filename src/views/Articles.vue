@@ -1,7 +1,7 @@
 <template>
   <div class="article">
     <div v-if="articles">
-      <div v-for="article in articles" :key="article.url">
+      <div v-for="article in articles" :key="article.slug">
         <ArticleListingSummary :article="article"/>
       </div>
     </div>

@@ -1,20 +1,12 @@
-import MarkdownIt from 'markdown-it';
+import marked from 'marked';
 
 export default class MarkdownToHtmlService {
   public convertMarkdown(content: string, baseUrl: string): string {
-    let html = this.processMarkdown(content);
-    html = this.convertRelativeUrls(html, baseUrl);
-    return html;
+    return this.processMarkdown(content, baseUrl);
   }
 
-  private processMarkdown(markdown: string): string {
-    const renderer = new MarkdownIt();
-    const html = renderer.render(markdown);
+  private processMarkdown(markdown: string, baseUrl: string): string {
+    const html = marked(markdown, { baseUrl });
     return html;
-  }
-
-  private convertRelativeUrls(html: string, baseUrl: string): string {
-    const processedHtml = html.replace(/\.\//, `${baseUrl}/`);
-    return processedHtml;
   }
 }

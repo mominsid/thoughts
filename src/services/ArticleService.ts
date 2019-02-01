@@ -19,22 +19,18 @@ export default class ArticleService {
   }
 
   public findArticleDefinitionByUrl(url: string): Article {
-    return articles.filter((m) => m.url === url)[0];
+    return articles.filter((m) => m.slug === url)[0];
   }
 
   public getArticleLink(article: Article) {
-    return this.getLinkUrl(article.url);
+    return this.getLinkUrl(article.slug);
   }
 
   public async fetchArticle(article: Article): Promise<string> {
-    const response = await axios.get(article.file);
+    const response = await axios.get(`${article.location}${article.file}`);
     const data = response.data;
     const md = new MarkdownToHtmlService();
-    return md.convertMarkdown(data, this.getContentUrlBase(article));
-  }
-
-  private getContentUrlBase(article: Article): string {
-    return `${article.file.replace(/\/[^\/]*$/, '')}`;
+    return md.convertMarkdown(data, article.location);
   }
 
   private getLinkUrl(url: string): string {

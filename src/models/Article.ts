@@ -1,6 +1,7 @@
 interface Article {
   title: string;
-  url: string;
+  slug: string;
+  location: string;
   file: string;
   tags: string[];
 }

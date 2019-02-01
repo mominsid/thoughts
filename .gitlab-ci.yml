@@ -1,0 +1,28 @@
+image: node:10.15.0
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - dist
+
+install-build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+
+deploy:prod:
+  stage: deploy
+  only:
+    - master
+  script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$DEPLOY_SSH_PRIVATE_KEY")
+    - scp -o stricthostkeychecking=no -r dist/* $DEPLOY_SSH_USER@$DEPLOY_HOST:$DEPLOY_LOCATION
+

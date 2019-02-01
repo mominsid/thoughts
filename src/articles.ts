@@ -6,8 +6,9 @@ export const repositoryUrl = 'https://github.com/mominsid/articles';
 export const articles: Article[] = [
   {
     title: 'Hello, world!',
-    url: '2019-01-30/Hello-World',
-    file: `${host}2019-01-30/Hello-World.markdown`,
+    slug: '2019-01-30/Hello-World',
+    location: `${host}2019-01-30/`,
+    file: `Hello-World.markdown`,
     tags: ['Excellent', 'Great work'],
   },
 ];
