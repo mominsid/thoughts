@@ -29,6 +29,7 @@
   }
 }
 #main {
+  text-align: center;
   width: 80%;
   max-width: 960px;
   min-width: 320px;

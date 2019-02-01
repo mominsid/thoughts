@@ -21,14 +21,8 @@
         <a
           target="_blank"
           href="https://github.com/mominsid/thoughts"
-        >https://github.com/mominsid/thoughts</a>. Go look.
+        >Github</a>. Go look.
       </li>
     </ul>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.about {
-  text-align: center;
-}
-</style>
