@@ -1,0 +1,38 @@
+// Only import this file in the main app entry point.
+
+// GENERAL GLOBAL STYLES
+:root {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--color-primary-text);
+  background-color: var(--color-primary);
+  transition: color 0.1s linear;
+  transition: background-color 0.1s linear;
+}
+
+// PAGE TRANSITIONS
+.fade-enter-active,
+.fade-leave-active {
+  transition-duration: 0.2s;
+  transition-property: opacity;
+  transition-timing-function: ease;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+// GENERAL ELEMENT STYLES AND OVERRIDES
+a {
+  color: var(--color-secondary-text);
+  &.router-link-exact-active,
+  &:active,
+  &:visited,
+  &:hover {
+    color: var(--color-secondary-text-subtle);
+  }
+}
+ul {
+  list-style-type: none;
+}

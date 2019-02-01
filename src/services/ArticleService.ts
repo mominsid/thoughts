@@ -27,19 +27,16 @@ export default class ArticleService {
   }
 
   public async fetchArticle(article: Article): Promise<string> {
-    const response = await axios.get(this.getContentUrl(article.file));
+    const response = await axios.get(article.file);
     const data = response.data;
     const md = new MarkdownToHtmlService();
     return md.convertMarkdown(data, this.getContentUrlBase(article));
   }
 
   private getContentUrlBase(article: Article): string {
-    return `/${article.file.replace(/\/[^\/]*$/, '')}`;
+    return `${article.file.replace(/\/[^\/]*$/, '')}`;
   }
 
-  private getContentUrl(filePath: string): string {
-    return `/${filePath}`;
-  }
   private getLinkUrl(url: string): string {
     return `${this.linkUrlBase}${url}`;
   }

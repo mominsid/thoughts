@@ -5,10 +5,16 @@
         <ArticleListingSummary :article="article"/>
       </div>
     </div>
+    <div v-if="hasMore()">
+      <span v-on:click="loadMore()">Load More</span>
+    </div>
     <div>
-      <div v-if="hasMore()">
-        <span v-on:click="loadMore()">Load More</span>
-      </div>
+      <p>Articles are hosted on Github at
+        <a
+          target="_blank"
+          href="https://github.com/mominsid/articles"
+        >https://github.com/mominsid/articles</a>
+      </p>
     </div>
   </div>
 </template>

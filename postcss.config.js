@@ -1,5 +1,6 @@
 module.exports = {
   plugins: {
-    autoprefixer: {}
+    autoprefixer: {},
+    "postcss-css-variables": "^0.11.0",
   }
 }

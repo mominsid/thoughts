@@ -3,19 +3,21 @@
     <h1>Sid Momin</h1>
 
     <ul>
-      <li>Works at
+      <li>
+        Works at
         <a target="_blank" href="https://mmkkyweb.com">MMKKY Web</a>
       </li>
       <li>Is owner along with 3 other equal partners.</li>
     </ul>
-    Sid Momin looks like this:
+    <p>Sid Momin looks like this:</p>
     <img :src="require('@/assets/Sid_Momin.jpg')" alt="Sid Momin">
 
     <h2>This website</h2>
 
     <ul>
       <li>Created using Vue and some markdown parsing packages to retrieve posts.</li>
-      <li>Repo is at
+      <li>
+        Repo is at
         <a
           target="_blank"
           href="https://github.com/mominsid/thoughts"
@@ -24,3 +26,9 @@
     </ul>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.about {
+  text-align: center;
+}
+</style>
